@@ -1,0 +1,39 @@
+body {
+    margin: 0 15%;
+    padding: 30px;
+}
+
+section {
+    margin-top: 40px;
+}
+
+h1, h2 {
+    color: #042b8f;
+}
+
+h1, p {
+    text-align: center;
+}
+
+button {
+    display: block;
+    background-color: rgb(45, 83, 95);
+    border: none;
+    padding: 10px 20px;
+    color: #e2e4e4;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #010101;
+    background-color: cadetblue;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 0 5%;
+        padding: 10px;
+    }
+}
