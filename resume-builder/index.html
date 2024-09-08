@@ -7,11 +7,96 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header id="personal">
-        <h1>Mehreen Munsif Ali</h1>
-        <p>Contact Details: 0312-1234567 | Email: mehreen.munif.ali@gmail.com</p>
+    <header>
+        <h1>Build Your Resume</h1>
     </header>
-    <hr>
+        <form  id="resume-form">
+            <fieldset id="personal">
+                <legend>Personal Information</legend>
+                <label for="name">
+                    Name
+                    <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                </label>
+                <label for="contact-details">
+                    Contact Details
+                    <input type="tel" name="contact-details" id="contact-details" placeholder="0300-1234567" pattern="^03\d{2}-\d{7}$" required>
+                    <span class="error" id="contact-error">Please enter a valid phone number (e.g., 0300-1234567).</span>
+                </label>
+                <label for="email">
+                    Email
+                    <input type="email" name="email" id="email" placeholder="Enter email" required>
+                </label>
+            </fieldset>
+            <fieldset id="education">
+                <legend>Education</legend>
+                <label for="degree">
+                    Degree
+                    <input type="text" name="degree" id="degree" placeholder="Enter your latest degree" required>
+                </label>
+                <label for="institute">
+                    Institute
+                    <input type="text" name="institute" id="institute" placeholder="Enter your Institute" required>
+                </label>
+                <label for="year">
+                    Completion Year
+                    <input type="number" name="year" id="year" placeholder="Year of completion" required>
+                </label>
+            </fieldset>
+            <fieldset id="experience">
+                <legend>Professional Experience</legend>
+                <div class="experience-entry">
+                    <label for="experience">
+                        Position
+                        <input type="text" name="position" placeholder="Position">
+                    </label>
+                    <label for="company">
+                        Company
+                        <input type="text" name="company" placeholder="Company">
+                    </label>
+                    <label for="duration">
+                        Duration
+                        <input type="number" name="duration" placeholder="Duration">
+                    </label>
+                </div>
+                <button id="toggle-experience" type="button">Toggle Experience</button>
+                <button id="add-experience" type="button">Add More</button>
+            </fieldset>
+            <fieldset id="skills">
+                <legend>Skills</legend>
+                <div class="skills-entry">
+                    <label for="skills">
+                        <input type="text" name="skills" placeholder="Add a Skill">
+                    </label>
+                </div>
+                <button id="add-skills">Add More</button>
+            </fieldset>
+            <fieldset id="certifications">
+                <legend>Certifications</legend>
+                <div class="certifications-entry">
+                    <label for="certifications">
+                        Certificate
+                        <input type="text" name="certifications" placeholder="Certificate">
+                    </label>
+                    <label for="cert-institute">
+                        Institute
+                        <input type="text" name="cert-institute" placeholder="Institute">
+                    </label>
+                    <label for="cert-year">
+                        Completion Time
+                        <input type="number" name="cert-year" placeholder="Completion Time">
+                    </label>
+                </div>
+                <button id="toggle-certifications" type="button">Toggle Certifications</button>
+                <button id="add-certifications" type="button">Add More</button>
+            </fieldset>
+            <button type="submit">Generate Resume</button>    
+        </form>
+        <section id="resume">
+            <h2>Generated Resume</h2>
+            <div id="resume-output"></div>
+        </section>
+    <!-- <h1>Mehreen Munsif Ali</h1>
+    <p>Contact Details: 0312-1234567 | Email: mehreen.munif.ali@gmail.com</p>
     <section id="education">
         <h2>Education</h2>
         <ul>
@@ -29,8 +114,6 @@
         </ul>
     </section>
     <button id="toggle-experience">Toggle Experience</button>
-
-    <hr>
     <section id="skills">
         <h2>Skills</h2>
         <ul>
@@ -47,7 +130,7 @@
             <li><b>Data Structures and Algorithms</b> | Jan 2024 – Present | Apna College</li>
         </ul>
     </section>
-    <button id="toggle-certifications">Toggle Certifications</button>
+    <button id="toggle-certifications">Toggle Certifications</button> -->
 
     <script src="main.js"></script>
 </body>
