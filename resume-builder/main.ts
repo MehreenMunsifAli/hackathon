@@ -23,10 +23,15 @@ addExperienceBtn.addEventListener('click', (e: Event) => {
     const experienceEntry = document.createElement('div');
     experienceEntry.classList.add('experience-entry');
     experienceEntry.innerHTML = `
-            <label>
-                <input type="text" name="experience" placeholder="Position">
-                <input type="text" name="company" placeholder="Company">
-                <input type="number" name="duration" placeholder="Duration">
+       <label>
+            Position
+            <input type="text" name="position" placeholder="Position">
+        </label>
+        <label>Company
+            <input type="text" name="company" placeholder="Company">
+        </label>
+        <label>Duration
+            <input type="number" name="duration" placeholder="Duration">
         </label>
     `;
     experienceSection.appendChild(experienceEntry)
@@ -53,11 +58,16 @@ const certificationsSection = document.getElementById('certifications') as HTMLE
 addCertifictions.addEventListener('click', (e: Event) => {
     e.preventDefault();
     const certificationsEntry = document.createElement('div');
-    certificationsEntry.classList.add('skills-entry');
+    certificationsEntry.classList.add('certifications-entry');
     certificationsEntry.innerHTML = `
         <label>
+            Certificate
             <input type="text" name="certifications" placeholder="Certificate">
+        </label>
+        <label>Institute
             <input type="text" name="cert-institute" placeholder="Institute">
+        </label>
+        <label>Completion Time
             <input type="number" name="cert-year" placeholder="Completion Time">
         </label>
     `
@@ -81,25 +91,36 @@ form.addEventListener('submit', (e: Event) => {
     //user input for experience
     const experiences: string[] = [];
     document.querySelectorAll('.experience-entry').forEach((entry) => {
-        const position = (entry.querySelector('input[name="position"]') as HTMLInputElement).value;
-        const company = (entry.querySelector('input[name="company"]') as HTMLInputElement).value;
-        const duration = (entry.querySelector('input[name="duration"]') as HTMLInputElement).value;
+        const positionInput = entry.querySelector('input[name="position"]') as HTMLInputElement;
+        const companyInput = entry.querySelector('input[name="company"]') as HTMLInputElement;
+        const durationInput = entry.querySelector('input[name="duration"]') as HTMLInputElement;
+    
+        const position = positionInput ? positionInput.value : '';
+        const company = companyInput ? companyInput.value : '';
+        const duration = durationInput ? durationInput.value : '';
+    
         experiences.push(`${position} | ${company} | ${duration}`);
     })
 
     //user input for skills
     const skills: string[] = [];
     document.querySelectorAll('.skills-entry').forEach((entry) => {
-        const skill = (entry.querySelector('input[name="skills"]') as HTMLInputElement).value;
+        const skillInput = entry.querySelector('input[name="skills"]') as HTMLInputElement;
+        const skill = skillInput ? skillInput.value : '';
         skills.push(`${skill}`);
     })
 
     //user input for certifications
     const certifications: string[] = [];
     document.querySelectorAll('.certifications-entry').forEach((entry) => {
-        const certification = (entry.querySelector('input[name="certifications"]') as HTMLInputElement).value;
-        const cert_institute = (entry.querySelector('input[name="cert_institute"]') as HTMLInputElement).value;
-        const cert_year = (entry.querySelector('input[name="cert_year"]') as HTMLInputElement).value;
+        const certificationInput = entry.querySelector('input[name="certifications"]') as HTMLInputElement;
+        const certInstituteInput = entry.querySelector('input[name="cert-institute"]') as HTMLInputElement;
+        const certYearInput = entry.querySelector('input[name="cert-year"]') as HTMLInputElement;
+    
+        const certification = certificationInput ? certificationInput.value : '';
+        const cert_institute = certInstituteInput ? certInstituteInput.value : '';
+        const cert_year = certYearInput ? certYearInput.value : '';
+    
         certifications.push(`${certification} | ${cert_institute} | ${cert_year}`);
     })
 
@@ -109,31 +130,29 @@ form.addEventListener('submit', (e: Event) => {
         <p>Contact Details: ${contact} | Email: ${email}</p>
         <h2>Education</h2>
         <p>${degree} | ${institute} | ${year}</p>
-        <h2>Experience</h2>
+        <h2>Professional Experience</h2>
         <ul>
-            ${experiences.map(exp => `<li>${exp}</li>`).join(' | ')}
+            ${experiences.map(exp => `<li>${exp}</li>`).join('')}
         </ul>
         <h2>Skills</h2>
         <ul>
-            ${skills.map(skill => `<li>${skill}</li>`).join(' | ')};
+            ${skills.map(skill => `<li>${skill}</li>`).join('')}
         </ul>
         <h2>Certifications</h2>
         <ul>
-            ${certifications.map(certification => `<li>${certification}</li>`).join(' | ')};
+            ${certifications.map(cert => `<li>${cert}</li>`).join('')}
         </ul>
-    `
+    `;
 })
 
 const toggleExperienceButton = document.getElementById('toggle-experience') as HTMLButtonElement;
-// const experienceSection = document.getElementById('experience') as HTMLElement;
-
-const toggleCertificationsButton = document.getElementById('toggle-certifications') as HTMLButtonElement;
-// const certificationsSection = document.getElementById('certifications') as HTMLElement;
-
 toggleExperienceButton.addEventListener('click', () => {
     experienceSection.style.display = experienceSection.style.display === 'none' ? 'block' : 'none';
 });
 
+const toggleCertificationsButton = document.getElementById('toggle-certifications') as HTMLButtonElement;
 toggleCertificationsButton.addEventListener('click', () => {
     certificationsSection.style.display = certificationsSection.style.display === 'none' ? 'block' : 'none';
 });
+
+

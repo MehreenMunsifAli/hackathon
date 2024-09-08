@@ -15,6 +15,12 @@ h1, p {
     text-align: center;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 label {
     display: block;
     margin-bottom: 15px;
@@ -41,6 +47,10 @@ legend {
     display: none;
 }
 
+.experience-entry, .skills-entry, .certifications-entry {
+    margin-bottom: 15px;
+}
+
 button {
     display: block;
     background-color: rgb(45, 83, 95);
@@ -57,6 +67,20 @@ button:hover {
     color: #010101;
     background-color: cadetblue;
     font-weight: bold;
+}
+
+#resume-output h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#resume-output h2 {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+#resume-output p {
+    margin-bottom: 15px;
 }
 
 @media only screen and (max-width: 600px) {
