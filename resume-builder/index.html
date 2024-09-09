@@ -45,17 +45,17 @@
             <fieldset id="experience">
                 <legend>Professional Experience</legend>
                 <div class="experience-entry">
-                    <label for="experience">
+                    <label for="position">
                         Position
-                        <input type="text" name="position" placeholder="Position">
+                        <input type="text" id="position" name="position" placeholder="Position">
                     </label>
                     <label for="company">
                         Company
-                        <input type="text" name="company" placeholder="Company">
+                        <input type="text" id="company" name="company" placeholder="Company">
                     </label>
                     <label for="duration">
                         Duration
-                        <input type="number" name="duration" placeholder="Duration">
+                        <input type="number" id="duration" name="duration" placeholder="Duration">
                     </label>
                 </div>
                 <button id="toggle-experience" type="button">Toggle Experience</button>
@@ -92,7 +92,7 @@
             <button type="submit">Generate Resume</button>    
         </form>
         <section id="resume">
-            <h2 style="text-align: center;">Generated Resume</h2>
+            <h2 id="generated" style="text-align: center; background-color: cadetblue;">Generated Resume</h2>
             <div id="resume-output"></div>
         </section>
     

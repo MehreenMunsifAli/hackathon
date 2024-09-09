@@ -95,9 +95,9 @@ form.addEventListener('submit', (e: Event) => {
         const companyInput = entry.querySelector('input[name="company"]') as HTMLInputElement;
         const durationInput = entry.querySelector('input[name="duration"]') as HTMLInputElement;
     
-        const position = positionInput ? positionInput.value : '';
-        const company = companyInput ? companyInput.value : '';
-        const duration = durationInput ? durationInput.value : '';
+        const position = positionInput ? positionInput.value : 'none';
+        const company = companyInput ? companyInput.value : 'none';
+        const duration = durationInput ? durationInput.value : 'none';
     
         experiences.push(`${position} | ${company} | ${duration}`);
     })
@@ -106,7 +106,7 @@ form.addEventListener('submit', (e: Event) => {
     const skills: string[] = [];
     document.querySelectorAll('.skills-entry').forEach((entry) => {
         const skillInput = entry.querySelector('input[name="skills"]') as HTMLInputElement;
-        const skill = skillInput ? skillInput.value : '';
+        const skill = skillInput ? skillInput.value : 'none';
         skills.push(`${skill}`);
     })
 
@@ -117,32 +117,43 @@ form.addEventListener('submit', (e: Event) => {
         const certInstituteInput = entry.querySelector('input[name="cert-institute"]') as HTMLInputElement;
         const certYearInput = entry.querySelector('input[name="cert-year"]') as HTMLInputElement;
     
-        const certification = certificationInput ? certificationInput.value : '';
-        const cert_institute = certInstituteInput ? certInstituteInput.value : '';
-        const cert_year = certYearInput ? certYearInput.value : '';
+        const certification = certificationInput ? certificationInput.value : 'none';
+        const cert_institute = certInstituteInput ? certInstituteInput.value : 'none';
+        const cert_year = certYearInput ? certYearInput.value : 'none';
     
         certifications.push(`${certification} | ${cert_institute} | ${cert_year}`);
     })
+
+    const generatedSection = document.getElementById('resume') as HTMLElement;
+    const computedStyle = window.getComputedStyle(generatedSection);
+        if(computedStyle.display === 'none'){
+            generatedSection.style.display = 'block';
+    }
 
     //resume output
     resume.innerHTML = `
         <h1>${name}</h1>
         <p>Contact Details: ${contact} | Email: ${email}</p>
+        <hr>
         <h2>Education</h2>
         <p>${degree} | ${institute} | ${year}</p>
+        <hr>
         <h2>Professional Experience</h2>
         <ul>
             ${experiences.map(exp => `<li>${exp}</li>`).join('')}
         </ul>
+        <hr>
         <h2>Skills</h2>
         <ul>
             ${skills.map(skill => `<li>${skill}</li>`).join('')}
         </ul>
+        <hr>
         <h2>Certifications</h2>
         <ul>
             ${certifications.map(cert => `<li>${cert}</li>`).join('')}
         </ul>
     `;
+    
 })
 
 const toggleExperienceButton = document.getElementById('toggle-experience') as HTMLButtonElement;

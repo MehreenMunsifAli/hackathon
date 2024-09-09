@@ -56,16 +56,16 @@ form.addEventListener('submit', function (e) {
         var positionInput = entry.querySelector('input[name="position"]');
         var companyInput = entry.querySelector('input[name="company"]');
         var durationInput = entry.querySelector('input[name="duration"]');
-        var position = positionInput ? positionInput.value : '';
-        var company = companyInput ? companyInput.value : '';
-        var duration = durationInput ? durationInput.value : '';
-        experiences.push("".concat(position, " | ").concat(company, " | ").concat(duration));
+        var position = positionInput ? positionInput.value : 'none';
+        var company = companyInput ? companyInput.value : 'none';
+        var duration = durationInput ? durationInput.value : 'none';
+        experiences.push("".concat(position, " ").concat(company, " ").concat(duration));
     });
     //user input for skills
     var skills = [];
     document.querySelectorAll('.skills-entry').forEach(function (entry) {
         var skillInput = entry.querySelector('input[name="skills"]');
-        var skill = skillInput ? skillInput.value : '';
+        var skill = skillInput ? skillInput.value : 'none';
         skills.push("".concat(skill));
     });
     //user input for certifications
@@ -74,13 +74,18 @@ form.addEventListener('submit', function (e) {
         var certificationInput = entry.querySelector('input[name="certifications"]');
         var certInstituteInput = entry.querySelector('input[name="cert-institute"]');
         var certYearInput = entry.querySelector('input[name="cert-year"]');
-        var certification = certificationInput ? certificationInput.value : '';
-        var cert_institute = certInstituteInput ? certInstituteInput.value : '';
-        var cert_year = certYearInput ? certYearInput.value : '';
+        var certification = certificationInput ? certificationInput.value : 'none';
+        var cert_institute = certInstituteInput ? certInstituteInput.value : 'none';
+        var cert_year = certYearInput ? certYearInput.value : 'none';
         certifications.push("".concat(certification, " | ").concat(cert_institute, " | ").concat(cert_year));
     });
+    var generatedSection = document.getElementById('resume');
+    var computedStyle = window.getComputedStyle(generatedSection);
+    if (computedStyle.display === 'none') {
+        generatedSection.style.display = 'block';
+    }
     //resume output
-    resume.innerHTML = "\n        <h1>".concat(name, "</h1>\n        <p>Contact Details: ").concat(contact, " | Email: ").concat(email, "</p>\n        <h2>Education</h2>\n        <p>").concat(degree, " | ").concat(institute, " | ").concat(year, "</p>\n        <h2>Professional Experience</h2>\n        <ul>\n            ").concat(experiences.map(function (exp) { return "<li>".concat(exp, "</li>"); }).join(''), "\n        </ul>\n        <h2>Skills</h2>\n        <ul>\n            ").concat(skills.map(function (skill) { return "<li>".concat(skill, "</li>"); }).join(''), "\n        </ul>\n        <h2>Certifications</h2>\n        <ul>\n            ").concat(certifications.map(function (cert) { return "<li>".concat(cert, "</li>"); }).join(''), "\n        </ul>\n    ");
+    resume.innerHTML = "\n        <h1>".concat(name, "</h1>\n        <p>Contact Details: ").concat(contact, " | Email: ").concat(email, "</p>\n        <hr>\n        <h2>Education</h2>\n        <p>").concat(degree, " | ").concat(institute, " | ").concat(year, "</p>\n        <hr>\n        <h2>Professional Experience</h2>\n        <ul>\n            ").concat(experiences.map(function (exp) { return "<li>".concat(exp, "</li>"); }).join(' | '), "\n        </ul>\n        <hr>\n        <h2>Skills</h2>\n        <ul>\n            ").concat(skills.map(function (skill) { return "<li>".concat(skill, "</li>"); }).join(''), "\n        </ul>\n        <hr>\n        <h2>Certifications</h2>\n        <ul>\n            ").concat(certifications.map(function (cert) { return "<li>".concat(cert, "</li>"); }).join(''), "\n        </ul>\n    ");
 });
 var toggleExperienceButton = document.getElementById('toggle-experience');
 toggleExperienceButton.addEventListener('click', function () {

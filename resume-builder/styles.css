@@ -83,6 +83,20 @@ button:hover {
     margin-bottom: 15px;
 }
 
+#resume-output p:last-of-type {
+    text-align: left;
+}
+
+#resume {
+    display: none;
+}
+
+#generated {
+    text-align: center;
+    background-color: cadetblue;
+    padding: 10px;
+}
+
 @media only screen and (max-width: 600px) {
     body {
         margin: 0 5%;
