@@ -1,0 +1,119 @@
+body {
+    background-color: rgb(155, 178, 197);
+}
+
+h1 {
+    text-align: center;
+    color: rgb(107, 66, 5);
+}
+
+form {
+    height: 100%;
+    width: 50%;
+    margin: auto;
+}
+
+fieldset {
+    border: 2px solid black;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-size:x-large;
+}
+
+label {
+    display: block;
+    margin: 15px 2px 8px;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    color: rgb(54, 100, 116);
+}
+
+input, textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border-width: 3px;
+    border-color: rgb(99, 83, 189);
+}
+
+input:hover, textarea:hover {
+    border-color: rgb(70, 152, 54);
+}
+
+#error {
+    display: none;
+    color: red;
+}
+
+#photo {
+    font-size: medium;
+}
+
+button {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: rgb(49, 128, 178);
+    border: none;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-size: medium;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(38, 107, 151);
+}
+
+.hidden {
+    display: none;
+}
+
+
+#resume {
+    height: 100%;
+    width: 75%;
+    margin: auto;
+    background-color: white;
+}
+
+#resume h2, #resume h1 {
+    color: rgb(8, 8, 8);
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+#button-container button {
+    width: auto;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 640px) {
+    body {
+        margin: auto;
+        padding: 10px;
+    }
+
+    form {
+        width: 80%;
+    }
+
+    #resume {
+        width: 80%;
+    }
+
+    #button-container {
+        flex-wrap: wrap;
+    }
+}
