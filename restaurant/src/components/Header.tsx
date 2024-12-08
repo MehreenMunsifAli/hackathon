@@ -131,12 +131,12 @@ export default function Header() {
                 <div className="container pl-24 lg:flex mt-[32px] lg:justify-between ">
                     {/* Left Content */}
                     <div className=" lg:w-1/2 lg:max-w-[472px] sm:w-full ">
-                        <h1 className={`${greatVibes.className} text-[#FF9F0D] italic text-[32px] mt-12`}>It's Quick & Amusing!</h1>
+                        <h1 className={`${greatVibes.className} text-[#FF9F0D] italic text-[32px] mt-12`}>It&apos;s Quick & Amusing!</h1>
                         <h1 className="w-[472px] h-[136px] text-[60px] font-bold leading-tight mt-2 whitespace-nowrap">
                             <span className="text-[#FF9F0D]">Th</span>e Art of Speed <br /> Food Quality
                         </h1>
                         <p className="text-gray-400 mt-8 lg:w-[418px] lg:h-[48px]">
-                            Lorem ipsum dolor sit amet&apos; consectetur adipiscing elit. Varius sed
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed
                             pharetra dictum neque massa congue.
                         </p>
                         <button className="mt-8 px-6 py-3 w-[190px] h-[60px] bg-[#FF9F0D] text-white font-semibold rounded-full hover:bg-yellow-500 transition">
