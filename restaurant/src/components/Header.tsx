@@ -3,17 +3,13 @@ import Image from "next/image";
 import { Input } from "./ui/input";
 import { FiSearch } from "react-icons/fi";
 import { RiFacebookFill } from "react-icons/ri";
-import { FaTwitter } from "react-icons/fa";
+import { FaTwitter, FaPinterestP } from "react-icons/fa";
 import { SlHandbag } from "react-icons/sl";
-import { FaPinterestP } from "react-icons/fa";
 import {Great_Vibes} from "next/font/google";
 import Link from "next/link";
 import {
     Sheet,
     SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
     SheetTrigger,
   } from "@/components/ui/sheet";
   import { Menu } from "lucide-react";
@@ -140,7 +136,7 @@ export default function Header() {
                             <span className="text-[#FF9F0D]">Th</span>e Art of Speed <br /> Food Quality
                         </h1>
                         <p className="text-gray-400 mt-8 lg:w-[418px] lg:h-[48px]">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed
+                            Lorem ipsum dolor sit amet&apos; consectetur adipiscing elit. Varius sed
                             pharetra dictum neque massa congue.
                         </p>
                         <button className="mt-8 px-6 py-3 w-[190px] h-[60px] bg-[#FF9F0D] text-white font-semibold rounded-full hover:bg-yellow-500 transition">

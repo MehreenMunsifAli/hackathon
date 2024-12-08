@@ -1,4 +1,3 @@
-import { FaCheck } from "react-icons/fa";
 import Image from "next/image";
 import {Great_Vibes} from "next/font/google";
 import Rectangle from "./Rectangle";
