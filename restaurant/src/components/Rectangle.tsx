@@ -4,17 +4,17 @@ interface RectangleType {
     ImageSrc: string;
     AltText: string;
     Label?: string;
-    ImageWidth?: number;
-    ImageHeight?: number;
+    ComponentWidth?: string;
+    ComponentHeight?: string;
     IconWidth?: number;
     IconHeight?: number;
 }
 
-export default function Rectangle({ImageSrc, AltText, Label, ImageWidth = 102, ImageHeight = 100, IconWidth = 56, IconHeight = 56 }: RectangleType) {
+export default function Rectangle({ImageSrc, AltText, Label, ComponentWidth = '102px', ComponentHeight = `100px`, IconWidth = 56, IconHeight = 56 }: RectangleType) {
 
     return(
-        <div style={{width: ImageWidth}}>
-            <div className=" bg-[#FF9F0D] rounded-[6px] flex items-center justify-center" style={{height: ImageHeight}}>
+        <div style={{width: ComponentWidth}} className="">
+            <div className="bg-[#FF9F0D] relative rounded-[6px] flex items-center justify-center" style={{height: ComponentHeight}} >
                 <Image 
                     src={ImageSrc}
                     alt={AltText}

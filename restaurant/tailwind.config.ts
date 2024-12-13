@@ -55,7 +55,15 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		fontSize: {
+			'h1': '60px',
+			'h2': '48px',
+			'h3': '40px',
+			'h4': '32px',
+			'h5': '24px',
+			'h6': '20px',
+		}
   	}
   },
   plugins: [require("tailwindcss-animate")],

@@ -8,14 +8,14 @@ export default function Aboutus() {
 
     return(
         <>
-        <div id="aboutus" className="w-[1320px] h-auto mx-auto pt-28 text-white flex justify-between ">
+        <div id="aboutus" className="container max-w-screen-[1280px] mx-auto my-16 text-white flex lg:flex-row flex-col items-center justify-between gap-12 lg:gap-0">
             {/* Left Content */}
-            <div>
+            <div className="flex flex-col items-center lg:items-start">
                 <h1 className={`${greatVibes.className} text-[#FF9F0D] italic text-[32px] px-0`}>About us</h1>
-                <h2 className="w-[472px] h-[136px] text-[48px] font-bold leading-tight mt-2 whitespace-nowrap">
+                <h2 className="w-[472px] h-[136px] text-[48px] font-bold leading-tight mt-2 whitespace-nowrap text-center lg:text-left">
                         <span className="text-[#FF9F0D]">We </span> Create the best <br /> foody product
                 </h2>
-                <p className="w-[526px] h-[130px] text-[16px] mt-8">
+                <p className="w-2/3 lg:w-[526px] text-[16px] my-8 text-center lg:text-left">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.
                 </p>
                 <div className="mb-4">
@@ -30,7 +30,7 @@ export default function Aboutus() {
                     <FaCheck className="inline mr-2" />
                     <span> Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                 </div>
-                <button className="mt-8 px-6 py-3 w-[190px] h-[60px] bg-[#FF9F0D] text-white font-semibold rounded-full hover:bg-yellow-500 transition">
+                <button className="mt-8 px-12 py-4 bg-[#FF9F0D] text-white font-semibold rounded-full hover:bg-transparent hover:border-2 hover:px-[46px] hover:py-[14px] hover:border-[#FF9F0D] transition duration-300">
                     Read More
                 </button>
             </div>
