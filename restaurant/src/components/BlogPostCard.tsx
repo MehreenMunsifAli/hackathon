@@ -27,7 +27,7 @@ export default function BlogPostCard({ComponentWidth = '423px', ImagePath, Image
             </div>
             <div className="my-6 px-10">
                 <p className="text-[#FF9F0D] my-4">{BlogDate}</p>
-                <p className="font-bold text-xl lg:text-h5 text-wrap mb-6">{BlogTitle}</p>
+                <p className="font-bold text-lg text-wrap mb-6">{BlogTitle}</p>
                 <div className="flex justify-between">
                     <p>Learn More</p>
                     <div className="flex gap-2 text-lg">
