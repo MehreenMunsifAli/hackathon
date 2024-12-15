@@ -7,7 +7,6 @@ const greatVibes = Great_Vibes({ subsets: ['latin'], weight: ["400","400"] });
 export default function WhyChooseUs() {
 
     return(
-        <>
         <div className="container max-w-screen-[1280px] mx-auto my-16 text-white flex justify-between">
             {/* Left Content */}
             <div className="hidden lg:block">
@@ -93,9 +92,7 @@ export default function WhyChooseUs() {
                     <h2 className="text-[#FF9F0D] text-[48px]">30+</h2>
                     <p className="text-[20px]">Years of <br /><span className="text-[24px] font-bold">Experience</span> </p>
                 </div>
-            </div>
-            
+            </div> 
         </div>
-        </>
     )
 }

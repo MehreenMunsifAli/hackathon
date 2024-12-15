@@ -7,7 +7,6 @@ const greatVibes = Great_Vibes({ subsets: ['latin'], weight: ["400","400"] });
 export default function Aboutus() {
 
     return(
-        <>
         <div id="aboutus" className="container max-w-screen-[1280px] mx-auto my-16 text-white flex lg:flex-row flex-col items-center justify-between gap-12 lg:gap-0">
             {/* Left Content */}
             <div className="flex flex-col items-center lg:items-start">
@@ -62,6 +61,5 @@ export default function Aboutus() {
                 
             </div>
         </div>
-        </>
     )
 }

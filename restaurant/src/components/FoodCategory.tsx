@@ -6,7 +6,6 @@ const greatVibes = Great_Vibes({ subsets: ['latin'], weight: ["400","400"] });
 export default function FoodCategory() {
 
     return(
-        <>
         <div className="container max-w-screen-[1280px] mx-auto my-16 text-white flex flex-col justify-center items-stretch ">
             {/* Top Content */}
             <div className="text-center">
@@ -65,6 +64,5 @@ export default function FoodCategory() {
                 </div>
             </div>
         </div>
-        </>
     );
 }

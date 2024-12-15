@@ -9,7 +9,6 @@ const greatVibes = Great_Vibes({ subsets: ['latin'], weight: ["400","400"] });
 export default function Testimonials() {
 
     return(
-        <>
         <div className="container max-w-screen-[1280px] mx-auto my-16 text-white ">
             {/* Top Content */}
             <div className="text-left">
@@ -58,6 +57,5 @@ export default function Testimonials() {
                 <GoDotFill className="text-[#FF9F0D] opacity-30 text-2xl"/>
             </div>
         </div>
-        </>
     );
 }

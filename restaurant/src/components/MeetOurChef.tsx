@@ -6,7 +6,6 @@ const greatVibes = Great_Vibes({ subsets: ['latin'], weight: ["400","400"] });
 export default function MeetOurChef() {
 
     return(
-        <>
         <div className="container max-w-screen-[1280px] mx-auto my-16 text-white ">
             {/* Top Content */}
             <div className="text-center">
@@ -32,6 +31,5 @@ export default function MeetOurChef() {
             </div>
             
         </div>
-        </>
     );
 }
