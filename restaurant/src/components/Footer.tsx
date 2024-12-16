@@ -31,31 +31,31 @@ export default function Footer() {
             </div>
 
             {/* Links */}
-            <div className="gap-16 mt-16 text-white flex flex-col lg:flex-row items-center lg:items-start justify-between">
+            <div className="gap-16 mt-16 text-white text-center flex flex-col lg:flex-row items-center lg:items-start justify-between">
                 {/* About us */}
-                <div className="w-1/4 flex flex-col items-center lg:items-start ">
+                <div className="lg:w-1/4 flex flex-col items-center lg:items-start ">
                     <h5 className="text-xl font-bold">About Us.</h5>
-                    <p className="w-[312px] h-[95px] my-4 text-center lg:text-left">
+                    <p className="w-2/3 lg:w-full lg:px-0 mt-6 mb-4 text-xs text-center lg:text-left">
                     orporate clients and leisure travelers has
                     been relying on Groundlink for dependab
                     safe, and professional chauffeured car
                     service in major cities across World.
                     </p>
-                    <div className="flex mt-8 gap-4 flex-col lg:flex-row items-center">
-                        <Rectangle ImageSrc="/assets/images/ClockClockwise.png" AltText="Clock Image" ComponentWidth="78px" ComponentHeight="72px" IconWidth={40} IconHeight={40} />
+                    <div className="flex mt-2 gap-4 flex-col lg:flex-row items-center">
+                        <Rectangle ImageSrc="/assets/images/ClockClockwise.png" AltText="Clock Image" ComponentWidth="68px" IconWidth={40} IconHeight={40} />
                         <div className="text-center lg:text-left">
-                            <p>Opening Hours</p>
-                            <p className="text-sm">Mon - Sat (8.00 - 6.00)</p>
-                            <p className="text-sm">Sunday - Closed</p>
+                            <p className="text-sm">Opening Hours</p>
+                            <p className="text-xs">Mon - Sat (8.00 - 6.00)</p>
+                            <p className="text-xs">Sunday - Closed</p>
                         </div>
                     </div>
                     
                 </div>
 
                 {/* Useful Links */}
-                <div className="w-1/4 text-center lg:text-left">
+                <div className=" text-center lg:text-left">
                     <h5 className="text-xl font-bold">Useful Links</h5>
-                    <ul className="mt-8 text-lg">
+                    <ul className="mt-6">
                         <li className="mb-6"><Link href={"/"}>About</Link></li>
                         <li className="mb-6"><Link href={"/"}>News</Link></li>
                         <li className="mb-6"><Link href={"/"}>Partners</Link></li>
@@ -66,9 +66,9 @@ export default function Footer() {
                 </div>
 
                  {/* Help */}
-                 <div className="w-1/4 text-center lg:text-left">
+                 <div className=" text-center lg:text-left">
                     <h5 className="text-xl font-bold">Help?</h5>
-                    <ul className="mt-8 text-lg">
+                    <ul className="mt-6 ">
                         <li className="mb-6"><Link href={"/"}>FAQ</Link></li>
                         <li className="mb-6"><Link href={"/"}>Term & conditions</Link></li>
                         <li className="mb-6"><Link href={"/"}>Reporting</Link></li>
@@ -79,11 +79,11 @@ export default function Footer() {
                 </div>
 
                 {/* Recent Post */}
-                <div className="w-1/4 flex flex-col gap-1 items-center lg:items-start">
+                <div className=" flex flex-col gap-1 items-center lg:items-start">
                     <h5 className="text-xl font-bold">Recent Post</h5>
                     <Link href={"/"}>
-                        <div className="w-[244px] h-[53px] flex gap-4 mt-8 overflow-hidden items-end bg-transparent">
-                            <div className="relative w-[59px] h-[59px] ">
+                        <div className=" flex gap-4 mt-6 overflow-hidden items-end bg-transparent">
+                            <div className="relative w-[49px] h-[49px] ">
                                 <Image 
                                     src={"/assets/images/unsplash_CLMpC9UhyTo.png"}
                                     alt="Mask Image"
@@ -92,15 +92,15 @@ export default function Footer() {
                                     className="object-cover"
                                 />
                             </div>
-                            <div>
+                            <div className="text-left">
                                 <p className="text-neutral-500">20 Feb 2022</p>
-                                <p className="text-[18px]">Keep Your Business</p>
+                                <p>Keep Your Business</p>
                             </div>
                         </div>
                     </Link>
                     <Link href={"/"}>
-                        <div className="w-[244px] h-[53px] flex gap-4 mt-4 overflow-hidden items-end bg-transparent">
-                            <div className="relative w-[59px] h-[59px] ">
+                        <div className=" flex gap-4 mt-4 overflow-hidden items-end bg-transparent">
+                            <div className="relative w-[49px] h-[49px] ">
                                 <Image 
                                     src={"/assets/images/unsplash_CRoAeTh5S_I.png"}
                                     alt="Mask Image"
@@ -109,15 +109,15 @@ export default function Footer() {
                                     className="object-cover"
                                 />
                             </div>
-                            <div>
+                            <div className="text-left">
                                 <p className="text-neutral-500">20 Feb 2022</p>
-                                <p className="text-[18px]">Keep Your Business</p>
+                                <p>Keep Your Business</p>
                             </div>
                         </div>
                     </Link>
                     <Link href={"/"}>
-                        <div className="w-[244px] h-[53px] flex gap-4 mt-4 overflow-hidden items-end bg-transparent">
-                            <div className="relative w-[59px] h-[59px] ">
+                        <div className=" flex gap-4 mt-4 overflow-hidden items-end bg-transparent">
+                            <div className="relative w-[49px] h-[49px] ">
                                 <Image 
                                     src={"/assets/images/Mask_Group.png"}
                                     alt="Mask Image"
@@ -126,9 +126,9 @@ export default function Footer() {
                                     className="object-cover"
                                 />
                             </div>
-                            <div>
+                            <div className="text-left">
                                 <p className="text-neutral-500">20 Feb 2022</p>
-                                <p className="text-[18px]">Keep Your Business</p>
+                                <p>Keep Your Business</p>
                             </div>
                         </div>
                     </Link>
@@ -137,7 +137,7 @@ export default function Footer() {
            
         </div>
          {/* End */}
-        <footer className="container max-w-screen-lg mx-auto h-[100px] bg-[#FF9F0D] flex flex-col lg:flex-row lg:justify-between justify-around items-center text-white">
+        <footer className="container max-w-screen-lg mx-auto py-4 bg-[#FF9F0D] flex flex-col lg:flex-row lg:justify-between justify-around items-center text-white">
             <p className="text-[16px]">
                 Copyright &copy; 2022 by Ayeman. All Rights Reserved.  
             </p>

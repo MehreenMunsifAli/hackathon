@@ -17,7 +17,7 @@ export default function Menu() {
                 </h2>
             </div>
 
-            <ul className="flex flex-wrap justify-start items-center text-[20px] gap-x-8 lg:gap-x-20 my-16">
+            <ul className="flex flex-wrap justify-center lg:justify-start items-center text-[20px] gap-x-8 lg:gap-x-20 my-16">
                 <li className="hover:text-[#FF9F0D]">
                     <Link href={"/"}>Breakfast</Link>
                 </li>
