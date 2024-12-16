@@ -1,6 +1,5 @@
 import Image from "next/image";
 import {Great_Vibes} from "next/font/google";
-import { url } from "inspector";
 import Link from "next/link";
 
 const greatVibes = Great_Vibes({ subsets: ['latin'], weight: ["400","400"] });
