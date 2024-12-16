@@ -18,9 +18,9 @@ export default function ChefCard({ ImagePath, AltText, ImageWidth = '312px', Ima
                 src={ImagePath}
                 alt={AltText}
                 fill
-                className="object-cover rounded-md"
+                className="object-fill rounded-md"
             />
-            <div className="w-[60%] pl-5 py-2 bg-white flex flex-col justify-center absolute left-0 bottom-0 rounded-bl-md">
+            <div className="w-[60%] pl-5 py-2 bg-white flex flex-col justify-center absolute left-0 bottom-0 lg:bottom-[46px] rounded-bl-md">
                 <p className="font-bold text-[18px]">{ChefName}</p>
                 <p className=" text-[14px] ">{ChefTitle}</p>
             </div>

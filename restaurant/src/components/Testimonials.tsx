@@ -9,18 +9,18 @@ const greatVibes = Great_Vibes({ subsets: ['latin'], weight: ["400","400"] });
 export default function Testimonials() {
 
     return(
-        <div className="container max-w-screen-[1280px] mx-auto my-16 text-white ">
+        <div className="container max-w-screen-lg mx-auto my-16 text-white ">
             {/* Top Content */}
-            <div className="text-left">
-                <h1 className={`${greatVibes.className} text-[#FF9F0D] italic text-[32px]`}>Testimonials</h1>
-                <h2 className=" text-[48px] font-bold leading-tight mt-2 whitespace-nowrap">
+            <div className="lg:text-left text-center">
+                <h1 className={`${greatVibes.className} text-[#FF9F0D] italic text-h5 lg:text-h4`}>Testimonials</h1>
+                <h2 className="text-h4 lg:text-h3 font-bold leading-tight mt-2 whitespace-nowrap">
                         What our clients are saying
                 </h2>
             </div>
 
             {/* Card Content */}
-            <div className="flex justify-center items-center mt-32 text-black">
-                <div className="relative bg-white max-w-[870px] w-full px-20">
+            <div className="flex justify-center items-center mx-auto mt-32 text-black">
+                <div className="relative bg-white max-w-[540px] lg:max-w-[670px] px-6 lg:px-20">
                     <div className="absolute w-[133px] h-[134px] -top-16 left-1/2 transform -translate-x-1/2">
                         <Image
                             src={"/assets/images/testimonial/Ellipse_6.svg"}
@@ -34,8 +34,8 @@ export default function Testimonials() {
                         }}>
                     </div> */}
                     <div className="flex flex-col items-center text-center pt-24 pb-8">
-                        <PiQuotesThin className="text-[#FF9F0D] text-4xl lg:text-5xl" />
-                        <p className="text-[18px] my-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.</p>
+                        <PiQuotesThin className="text-[#FF9F0D] text-2xl lg:text-3xl" />
+                        <p className="text-[14px] lg:text-[16px] my-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.</p>
                         <div className="flex">
                             <IoIosStar className="text-[#FF9F0D] text-[24px]" />
                             <IoIosStar className="text-[#FF9F0D] text-[24px]" />
@@ -51,10 +51,10 @@ export default function Testimonials() {
             
             {/* Dots */}
             <div className="flex justify-center mt-8">
-                <GoDotFill className="text-[#FF9F0D] text-2xl"/>
-                <GoDotFill className="text-[#FF9F0D] opacity-30 text-2xl"/>
-                <GoDotFill className="text-[#FF9F0D] opacity-30 text-2xl"/>
-                <GoDotFill className="text-[#FF9F0D] opacity-30 text-2xl"/>
+                <GoDotFill className="text-[#FF9F0D] text-lg lg:text-2xl"/>
+                <GoDotFill className="text-[#FF9F0D] opacity-30 text-lg lg:text-2xl"/>
+                <GoDotFill className="text-[#FF9F0D] opacity-30 text-lg lg:text-2xl"/>
+                <GoDotFill className="text-[#FF9F0D] opacity-30 text-lg lg:text-2xl"/>
             </div>
         </div>
     );

@@ -7,62 +7,68 @@ const greatVibes = Great_Vibes({ subsets: ['latin'], weight: ["400","400"] });
 export default function WhyChooseUs() {
 
     return(
-        <div className="container max-w-screen-[1280px] mx-auto my-16 text-white flex justify-between">
+        <div className="container max-w-screen-lg mx-auto my-16 text-white flex justify-between gap-8">
             {/* Left Content */}
             <div className="hidden lg:block">
                 {/* Top Row */}
                 <div className=" gap-4 flex items-end ">
-                    <div className="relative w-[290px] h-[285px] max-w-[362px] max-h-[356px]">
+                    <div className="relative w-[280px] h-[285px] max-w-[362px] max-h-[356px]">
                         <Image
                             src="/assets/images/unsplash_lP5MCM6nZ5A.png"
                             alt="Food Image"
-                            layout="fill"
+                            fill
                             className="object-cover rounded-lg"
+                            sizes="(max-width: 768px) 40vw, (max-width: 1280px) 50vw"
                         />
                     </div>
-                    <div className="relative w-[225px] h-[185px] max-w-[281px] max-h-[231px]">
+                    <div className="relative w-[215px] h-[185px] max-w-[281px] max-h-[231px]">
                         <Image
                             src="/assets/images/unsplash_dphM2U1xq0U.png"
                             alt="Food Image"
-                            layout="fill"
+                            fill
                             className="object-cover rounded-lg "
+                            sizes="(max-width: 768px) 40vw, (max-width: 1280px) 50vw"
                         />
                     </div>
                 </div>
 
                 {/* Second Row */}
                 <div className="mt-4 overflow-hidden gap-4 flex items-start">
-                    <div className="relative w-[195px] h-[245px] max-w-[244px] max-h-[306px] ">
+                    <div className="relative w-[185px] h-[245px] max-w-[244px] max-h-[306px] ">
                         <Image
                             src={"/assets/images/unsplash_CLMpC9UhyTo.png"}
                             alt="Main Course Image"
-                            layout="fill"
+                            fill
                             className="object-cover rounded-lg"
+                            sizes="(max-width: 768px) 40vw, (max-width: 1280px) 50vw"
                         />
                     </div>
-                    <div className="relative w-[177px] h-[181px] max-w-[221px] max-h-[226px] ">
+                    <div className="relative w-[167px] h-[181px] max-w-[221px] max-h-[226px] ">
                         <Image
                             src={"/assets/images/unsplash_-GFCYhoRe48.png"}
                             alt="Main Course Image"
-                            layout="fill"
+                            fill
                             className="object-cover rounded-lg"
+                            sizes="(max-width: 768px) 40vw, (max-width: 1280px) 50vw"
                         />
                     </div>
                     <div className=" overflow-hidden gap-2 flex flex-col">
-                        <div className="relative w-[129px] h-[134px] max-w-[161px] max-h-[168px] ">
+                        <div className="relative w-[127px] h-[134px] max-w-[161px] max-h-[168px] ">
                             <Image
                                 src={"/assets/images/unsplash_tzl1UCXg5Es.png"}
                                 alt="Main Course Image"
-                                layout="fill"
+                                fill
                                 className="object-cover rounded-lg"
+                                sizes="(max-width: 768px) 40vw, (max-width: 1280px) 50vw"
                             />
                         </div>
-                        <div className="relative w-[129px] h-[134px] max-w-[161px] max-h-[166px]">
+                        <div className="relative w-[127px] h-[134px] max-w-[161px] max-h-[166px]">
                             <Image
                                 src={"/assets/images/unsplash_mmnKI8kMxpc.png"}
                                 alt="Main Course Image"
-                                layout="fill"
+                                fill
                                 className="object-cover rounded-lg"
+                                sizes="(max-width: 768px) 40vw, (max-width: 1280px) 50vw"
                             />
                         </div>
                     </div>
@@ -71,14 +77,13 @@ export default function WhyChooseUs() {
                 
             </div>
             
-
             {/* Right Content */}
             <div className="flex flex-col items-center lg:items-start ">
-                <h1 className={`${greatVibes.className} text-[#FF9F0D] italic text-[32px] px-0`}>Why Choose us</h1>
-                <h2 className="w-full lg:w-[472px] lg:h-[136px] text-[48px] font-bold leading-tight mt-2 whitespace-nowrap text-center lg:text-left">
+                <h1 className={`${greatVibes.className} text-[#FF9F0D] italic text-h5 lg:text-h4`}>Why Choose us</h1>
+                <h2 className="text-h4 lg:text-h3 font-bold leading-tight mt-2 whitespace-nowrap text-center lg:text-left">
                         <span className="text-[#FF9F0D]">Ex</span>tra Ordinary taste <br /> And Experienced
                 </h2>
-                <p className="w-1/2 lg:w-[526px] lg:h-[130px] text-[16px] my-8 lg:mt-4 lg:mb-2 text-center lg:text-left">
+                <p className="my-8 text-center lg:text-left px-6 lg:px-0">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.
                 </p>
 

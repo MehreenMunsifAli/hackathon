@@ -24,9 +24,9 @@ export default function MenuItem({ImageSrc, AltText, MenuItem, MenuDescription, 
                 />
             </div>
             <div className="flex flex-col justify-center">
-                <p className="text-[20px] font-bold">{MenuItem}</p>
-                <p className="text-[14px]">{MenuDescription}</p>
-                <p className="text-[18px] font-bold text-[#FF9F0D]">{MenuPrice}$</p>
+                <p className=" font-bold">{MenuItem}</p>
+                <p className="text-[12px]">{MenuDescription}</p>
+                <p className=" font-bold text-[#FF9F0D]">{MenuPrice}$</p>
             </div>
             
       </div> 

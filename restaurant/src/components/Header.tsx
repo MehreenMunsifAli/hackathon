@@ -11,7 +11,7 @@ import {
 
 export default function Header() {
     return (
-        <header className="container mx-auto max-w-screen-[1280px] mt-[45px] bg-black lg:flex flex-col justify-center ">
+        <header className="container mx-auto max-w-screen-lg mt-[45px] bg-black lg:flex flex-col justify-center ">
             <div className="text-center h-[32px] ">
                 <p className="text-[#FF9F0D] text-[24px] font-bold ">Food<span className="text-white">tuck</span></p>
             </div>

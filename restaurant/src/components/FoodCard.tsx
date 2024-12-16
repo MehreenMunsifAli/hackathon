@@ -11,21 +11,21 @@ interface FoodCardType {
     Title: string;
 }
 
-export default function FoodCard({ ImagePath, AltText, ImageWidth = 120, ImageHeight = 120, ComponentWidth = 218, ComponentHeight = 247, Subtitle, Title }: FoodCardType) {
+export default function FoodCard({ ImagePath, AltText, ImageWidth = 100, ImageHeight = 100, ComponentWidth = 218, Subtitle, Title }: FoodCardType) {
 
     return(
-        <div style={{width: ComponentWidth, height: ComponentHeight}} className="flex flex-col justify-between items-center py-4 text-white">
-            <div className="relative">
+        <div style={{width: ComponentWidth}} className="overflow-hidden flex flex-col justify-between items-center py-4 text-white">
+            <div className="relative" style={{width: ImageWidth, height: ImageHeight}}>
                 <Image
                     src={ImagePath}
                     alt={AltText}
-                    width={ImageWidth}
-                    height={ImageHeight}
+                    fill
+                    sizes="(max-width: 768px) 40vw, (max-width: 1280px) 50vw"
                     className="object-cover"
                 />
             </div>
-            <h5 className="font-bold text-[16px] lg:text-h5 py-4">{Subtitle}</h5>
-            <h3 className="font-bold text-[24px] lg:text-h3">{Title}</h3>
+            <h5 className="font-bold text-[16px] lg:text-h6 py-4">{Subtitle}</h5>
+            <h3 className="font-bold text-h5">{Title}</h3>
         </div>
     )
 }

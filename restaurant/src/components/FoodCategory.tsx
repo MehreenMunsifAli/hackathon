@@ -6,57 +6,57 @@ const greatVibes = Great_Vibes({ subsets: ['latin'], weight: ["400","400"] });
 export default function FoodCategory() {
 
     return(
-        <div className="container max-w-screen-[1280px] mx-auto my-16 text-white flex flex-col justify-center items-stretch ">
+        <div className="container max-w-screen-lg mx-auto my-16 text-white flex flex-col justify-center items-center ">
             {/* Top Content */}
             <div className="text-center">
-                <h1 className={`${greatVibes.className} text-[#FF9F0D] italic text-[32px]`}>Food Category</h1>
-                <h2 className=" text-[48px] font-bold leading-tight mt-2 whitespace-nowrap">
+                <h1 className={`${greatVibes.className} text-[#FF9F0D] italic text-h5 lg:text-h4`}>Food Category</h1>
+                <h2 className="text-h4 lg:text-h3 font-bold leading-tight mt-2 whitespace-nowrap">
                         <span className="text-[#FF9F0D]">Ch</span>oose Food Item
                 </h2>
             </div>
 
             {/* Images Content */}
-            <div className=" flex justify-between flex-wrap lg:flex-nowrap my-16 gap-4 relative">
+            <div className=" flex flex-col lg:flex-row justify-between items-center flex-wrap lg:flex-nowrap my-16 gap-4 ">
                 {/* Single image with save 30% div */}
-                <div className="relative w-[305px] h-[328px] ">
+                <div className="relative w-[244px] h-[294px] ">
                     <Image
-                        className="object-cover"
+                        className="object-cover rounded-md"
                         src={"/assets/images/food_category/unsplash_-lHZUkiWM74.svg"}
                         alt="Eggs Image"
                         fill
                     />
-                    <div className="absolute inset-y-28 w-[206px] h-[97px] text-center flex flex-col items-end gap-4">
-                        <div className="w-[125px] h-[40px] bg-white text-[#FF9F0D] flex items-center justify-center">
+                    <div className="absolute inset-y-24 text-center flex flex-col items-end gap-4">
+                        <div className="px-4 py-2 bg-white text-[#FF9F0D] flex items-center justify-center rounded-lg">
                             <p className="text-[18px] font-bold">Save 30%</p>
                         </div>
-                        <div className="w-[206px] h-[46px] text-white bg-[#FF9F0D] flex items-center justify-center ">
+                        <div className="px-4 py-2 text-white bg-[#FF9F0D] flex items-center justify-center rounded-lg">
                             <p className="text-[20px] font-bold">Fast Food Dish</p>
                         </div>
                     </div>
 
                 </div>
                 
-                <div className=" relative w-[305px] h-[328px]">
+                <div className=" relative w-[244px] h-[294px]">
                     <Image
-                        className="object-cover"
+                        className="object-cover rounded-md"
                         src={"/assets/images/food_category/unsplash_dphM2U1xq0U.svg"}
                         alt="Main Course Image"
                         fill
                     />
                 </div>
 
-                <div className=" relative w-[306px] h-[329px]">
+                <div className=" relative w-[244px] h-[294px]">
                     <Image
-                        className="object-cover"
+                        className="object-cover rounded-md"
                         src={"/assets/images/food_category/unsplash_MRHyv-hHxgk.svg"}
                         alt="Main Course Image"
                         fill
                     />
                 </div>
                 
-                <div className=" relative w-[305px] h-[328px]">
+                <div className=" relative w-[244px] h-[294px]">
                     <Image
-                        className="object-cover"
+                        className="object-cover rounded-md"
                         src={"/assets/images/food_category/unsplash_q54Oxq44MZs.svg"}
                         alt="Sandwich"
                         fill
