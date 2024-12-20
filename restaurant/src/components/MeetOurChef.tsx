@@ -1,5 +1,5 @@
-import {Great_Vibes} from "next/font/google";
 import ChefCard from "./ChefCard";
+import {Great_Vibes} from "next/font/google";
 
 const greatVibes = Great_Vibes({ subsets: ['latin'], weight: ["400","400"] });
 

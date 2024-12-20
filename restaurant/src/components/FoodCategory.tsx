@@ -16,7 +16,7 @@ export default function FoodCategory() {
             </div>
 
             {/* Images Content */}
-            <div className="w-full flex flex-col lg:flex-row justify-between items-center flex-wrap lg:flex-nowrap my-16 gap-4 ">
+            <div className="container flex flex-col lg:flex-row justify-between items-center flex-wrap lg:flex-nowrap my-16 gap-4 ">
                 {/* Single image with save 30% div */}
                 <div className="relative w-full h-[700px] md:w-[244px] md:h-[294px] ">
                     <Image

@@ -9,20 +9,20 @@ import {
   } from "@/components/ui/sheet";
   import { Menu } from "lucide-react";
 
-export default function Header() {
+export default function PageHeader() {
     return (
-        <header className="container mx-auto max-w-screen-lg mt-[45px] bg-black lg:flex flex-col justify-center ">
-            <div className="text-center h-[32px] ">
-                <p className="text-[#FF9F0D] text-[24px] font-bold ">Food<span className="text-white">tuck</span></p>
+        <header className="container mx-auto max-w-screen-lg py-8 bg-black lg:flex justify-between items-center">
+            <div className="text-center lg:text-left ">
+                <p className="text-[#FF9F0D] text-xl font-bold ">Food<span className="text-white">tuck</span></p>
             </div>
             <div className="flex lg:flex-row lg:justify-between lg:items-center flex-col items-end text-white">
                 <nav className="flex items-center">
                     {/* Large screen nav */}
-                    <ul className="hidden lg:flex justify-between items-center text-[16px] gap-x-6">
+                    <ul className="hidden lg:flex justify-between items-center text-sm gap-x-6">
                         <li>
                             <Link href={"/"}>Home</Link>
                         </li>
-                        <li><Link href={"/menu"}>Menu</Link></li>
+                        <li><Link href={"/"}>Menu</Link></li>
                         <li><Link href={"/"}>Blog</Link></li>
                         <li><Link href={"/"}>Pages</Link></li>
                         <li className="relative group">
@@ -48,7 +48,7 @@ export default function Header() {
                                 </li>
                             </ul>
                         </li>
-                        <li><Link href={"/shop"}>Shop</Link></li>
+                        <li><Link href={"/"}>Shop</Link></li>
                         <li><Link href={"/"}>Contact</Link></li>
                     </ul>
                     {/* Small Screen nav */}

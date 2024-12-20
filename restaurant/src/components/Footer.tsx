@@ -141,7 +141,7 @@ export default function Footer() {
             <p className="text-[16px]">
                 Copyright &copy; 2022 by Ayeman. All Rights Reserved.  
             </p>
-            <div className="w-[240px] flex gap-4">
+            <div className="w-[240px] flex gap-2">
                 <SocialIcon Icon={FaFacebookF} Url="https://facebook.com" />
                 <SocialIcon Icon={FaTwitter} Url="https://twitter.com" />
                 <SocialIcon Icon={FaInstagram} Url="https://instagram.com" />

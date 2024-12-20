@@ -3,7 +3,7 @@ import FoodCard from "./FoodCard";
 export default function Highlight() {
 
     return (
-        <div className="container max-w-screen-lg mx-auto my-16 py-16 relative">
+        <div className="container max-w-screen-lg mx-auto my-16 py-16 relative bg-black">
             {/* Background image with opacity */}
             <div
                 className="absolute inset-0 bg-cover bg-no-repeat"
