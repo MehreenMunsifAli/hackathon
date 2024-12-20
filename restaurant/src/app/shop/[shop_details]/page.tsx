@@ -2,7 +2,7 @@
 import Banner from "@/components/Banner";
 import SocialIcon from "@/components/SocialIcon";
 import { Button } from "@/components/ui/button";
-import { useParams } from "next/navigation";
+// import { useParams } from "next/navigation";
 import {FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight, FaRegHeart } from "react-icons/fa";
 import { IoIosStar } from "react-icons/io";
 import { SlHandbag } from "react-icons/sl";
@@ -24,7 +24,7 @@ export default function ShopDetails() {
         "/assets/images/shop/shop_detail/Food_5.svg",
     ];
   
-    const {shop_details} = useParams();
+    // const {shop_details} = useParams();
 
     const socialIcons = [
         {
