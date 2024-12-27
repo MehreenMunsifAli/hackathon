@@ -2,19 +2,19 @@ import Image from "next/image";
 import { IoIosStar } from "react-icons/io";
 
 
-interface LatestProductsType {
+interface CheckoutCardType {
     ImagePath: string;
     ImageText: string;
     ImageWidth: number;
-    ImageHeight?: number;
+    ImageHeight: number;
     DishName: string;
+    Quantity?: string;
     Price?: number;
 }
 
-export default function LatestProductsCard({ImagePath, ImageText, ImageWidth, ImageHeight, DishName, Price}: LatestProductsType) {
+export default function CheckoutFoodCard({ImagePath, ImageText, ImageWidth, ImageHeight, DishName, Quantity, Price}: CheckoutCardType) {
     return(
         <div className="flex gap-3" >
-            {/* <div className="relative "> */}
                 <Image 
                     src={ImagePath}
                     alt={ImageText}
@@ -25,13 +25,7 @@ export default function LatestProductsCard({ImagePath, ImageText, ImageWidth, Im
             {/* </div> */}
             <div>
                 <p className="text-sm">{DishName}</p>
-                <div className="flex">
-                    <IoIosStar className="text-[#FF9F0D] text-xs" />
-                    <IoIosStar className="text-[#FF9F0D] text-xs" />
-                    <IoIosStar className="text-[#E0E0E0] text-xs" />
-                    <IoIosStar className="text-[#E0E0E0] text-xs" />
-                    <IoIosStar className="text-[#E0E0E0] text-xs" />
-                </div>
+                {Quantity && <p className="text-sm">{Quantity}</p>}
                 {Price && <p className="text-sm">${Price}</p>}
             </div>
         </div>

@@ -24,7 +24,7 @@ export default function Header() {
                         </li>
                         <li><Link href={"/menu"}>Menu</Link></li>
                         <li><Link href={"/"}>Blog</Link></li>
-                        <li><Link href={"/"}>Pages</Link></li>
+                        <li><Link href={"/signup"}>Pages</Link></li>
                         <li className="relative group">
                             <button className="bg-black text-white py-2 rounded focus:outline-none">
                                 About 
@@ -49,7 +49,7 @@ export default function Header() {
                             </ul>
                         </li>
                         <li><Link href={"/shop"}>Shop</Link></li>
-                        <li><Link href={"/"}>Contact</Link></li>
+                        <li><Link href={"/faq"}>Contact</Link></li>
                     </ul>
                     {/* Small Screen nav */}
                     <Sheet>
@@ -98,7 +98,9 @@ export default function Header() {
                         <Input placeholder="Search..." className="bg-black text-white text-[16px] w-[310px] h-[54px] pl-[20px] pr-[12px] rounded-[27px] border-2 border-[#FF9F0D]  " />
                         <FiSearch className="absolute right-5 bottom-1/2 transform translate-y-1/2 text-3xl text-white" />
                     </div>
-                    <SlHandbag className="text-2xl ml-4" />
+                    <Link href={"/shopping_cart"}>
+                        <SlHandbag className="text-2xl ml-4" />
+                    </Link>
                 </div>
                 
             </div>

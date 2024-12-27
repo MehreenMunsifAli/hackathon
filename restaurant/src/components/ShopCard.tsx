@@ -5,25 +5,25 @@ interface ShopCardType {
     id?: number;
     ImagePath: string;
     AltText: string;
-    ImageWidth?: string;
-    ImageHeight?: string;
+    ImageWidth?: number;
+    ImageHeight?: number;
     CurrentPrice: number;
     OldPrice?: number;
     DishName: string;
-    ComponentWidth?: string
 }
 
-export default function ShopCard({ ComponentWidth = '200px', ImagePath, ImageHeight, ImageWidth, AltText, CurrentPrice, DishName, OldPrice}: ShopCardType) {
+export default function ShopCard({ ImagePath, ImageHeight, ImageWidth, AltText, CurrentPrice, DishName, OldPrice}: ShopCardType) {
     return(
-        <div className=" overflow-hidden text-white bg-transparent " style={{width: ComponentWidth}}>
-            <div className="relative" style={{width: ImageWidth, height: ImageHeight}}>
+        <div className=" overflow-hidden text-white bg-transparent " >
+            {/* <div className="relative" > */}
                 <Image
                     className="object-cover"
                     src={ImagePath}
                     alt={AltText}
-                    fill
+                    width={ImageWidth}
+                    height={ImageHeight}
                 />
-            </div>
+            {/* </div> */}
             <div className="my-2">
                 
                 <p className=" font-bold text-wrap text-[#333333] ">{DishName}</p>
