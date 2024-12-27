@@ -1,6 +1,5 @@
 "use client";
 import Banner from "@/components/Banner";
-import Link from "next/link";
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { RxDividerHorizontal } from "react-icons/rx";

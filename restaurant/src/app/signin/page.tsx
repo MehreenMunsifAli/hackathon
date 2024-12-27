@@ -2,7 +2,6 @@ import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import { LuUserRound } from "react-icons/lu";
 import { RxEnvelopeClosed } from "react-icons/rx";
 import { LuLockKeyhole } from "react-icons/lu";
 import { Checkbox } from "@/components/ui/checkbox";

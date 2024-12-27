@@ -21,8 +21,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import ErrorBoundary from "@/app/error";
-import { error } from "console";
 
 
 

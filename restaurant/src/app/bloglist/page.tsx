@@ -1,6 +1,5 @@
 import Banner from "@/components/Banner";
 import BlogListPageCard from "@/components/BlogListPageCard";
-import OurChefPageCard from "@/components/OurChefPageCard";
 
 export default function BlogListPage() {
     

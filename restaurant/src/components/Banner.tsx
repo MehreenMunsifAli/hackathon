@@ -1,4 +1,3 @@
-import Image from "next/image";
 
 export default function Banner({Title, Page }: {Title: string, Page: string}) {
     return(

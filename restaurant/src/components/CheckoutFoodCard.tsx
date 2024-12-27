@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { IoIosStar } from "react-icons/io";
-
 
 interface CheckoutCardType {
     ImagePath: string;

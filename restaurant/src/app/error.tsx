@@ -1,6 +1,5 @@
 "use client";
 import Banner from '@/components/Banner';
-import Link from 'next/link';
 import { useEffect } from 'react';
 
 export default function ErrorBoundary({
