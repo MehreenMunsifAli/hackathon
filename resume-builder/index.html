@@ -5,97 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume Builder</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
-    <header>
-        <h1>Build Your Resume</h1>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Build Your Resume</h1>
+        </header>
         <form  id="resume-form">
+            <!-- Personal Info Starts Here-->
             <fieldset id="personal">
                 <legend>Personal Information</legend>
                 <label for="name">
+                    <!-- Name -->
                     Name
                     <input type="text" name="name" id="name" placeholder="Enter your name" required>
                 </label>
+                <!-- Contact Detail -->
                 <label for="contact-details">
                     Contact Details
                     <input type="tel" name="contact-details" id="contact-details" placeholder="0300-1234567" pattern="^03\d{2}-\d{7}$" required>
                     <span class="error" id="contact-error">Please enter a valid phone number (e.g., 0300-1234567).</span>
                 </label>
+                <!-- Picture -->
+                <label for="picture">
+                    <input type="file" name="picture" id="picture">
+                </label>
+                <!-- Email -->
                 <label for="email">
                     Email
                     <input type="email" name="email" id="email" placeholder="Enter email" required>
                 </label>
             </fieldset>
+            <!-- Personal Info Ends Here -->
+
+            <!-- Education Starts Here -->
             <fieldset id="education">
                 <legend>Education</legend>
-                <label for="degree">
-                    Degree
-                    <input type="text" name="degree" id="degree" placeholder="Enter your latest degree" required>
-                </label>
-                <label for="institute">
-                    Institute
-                    <input type="text" name="institute" id="institute" placeholder="Enter your Institute" required>
-                </label>
-                <label for="year">
-                    Completion Year
-                    <input type="number" name="year" id="year" placeholder="Year of completion" required>
-                </label>
+                <div class="education-entry">
+                    <!-- Degree -->
+                    <label for="degree">
+                        Degree
+                        <input type="text" name="degree" class="degree" placeholder="Enter your latest degree" required>
+                    </label>
+                    <!-- Institute -->
+                    <label for="institute">
+                        Institute
+                        <input type="text" name="institute" class="institute" placeholder="Enter your Institute" required>
+                    </label>
+                    <!-- Year -->
+                    <label for="year">
+                        Completion Year
+                        <input type="number" name="year" class="year" placeholder="Year of completion" required>
+                    </label>
+                </div>
             </fieldset>
+            <!-- Education Ends Here -->
+            <!-- Toggle Experience Button -->
+            <div>
+                <button id="toggle-experience" type="button">Hide Experience</button>
+            </div>
+            <!-- Experience Starts Here -->
             <fieldset id="experience">
                 <legend>Professional Experience</legend>
                 <div class="experience-entry">
+                     <!-- Position -->
                     <label for="position">
                         Position
-                        <input type="text" id="position" name="position" placeholder="Position">
+                        <input type="text" class="position" name="position" placeholder="Position">
                     </label>
+                    <!-- Company -->
                     <label for="company">
                         Company
-                        <input type="text" id="company" name="company" placeholder="Company">
+                        <input type="text" class="company" name="company" placeholder="Company">
                     </label>
-                    <label for="duration">
+                    <!-- Duration -->
+                    <label for="duration">  
                         Duration
-                        <input type="number" id="duration" name="duration" placeholder="Duration">
+                        <input type="number" class="duration" name="duration" placeholder="Duration">
                     </label>
                 </div>
-                <button id="toggle-experience" type="button">Toggle Experience</button>
+                <!-- Add More Button -->
                 <button id="add-experience" type="button">Add More</button>
             </fieldset>
+            <!-- Experience Ends Here -->
+
+            <!-- Skills Start Here -->
             <fieldset id="skills">
                 <legend>Skills</legend>
                 <div class="skills-entry">
+                    <!-- Skill -->
                     <label for="skills">
                         <input type="text" name="skills" placeholder="Add a Skill">
                     </label>
                 </div>
+                <!-- Add More Button -->
                 <button id="add-skills">Add More</button>
             </fieldset>
+            <!-- Skills Ends Here -->
+
+            <!-- Toggle Certifications Button -->
+            <div>
+                <button id="toggle-certifications" type="button">Hide Certifications</button>
+            </div>
+
+            <!-- Certifications Start Here -->
             <fieldset id="certifications">
                 <legend>Certifications</legend>
                 <div class="certifications-entry">
+                    <!-- Certificate -->
                     <label for="certifications">
                         Certificate
                         <input type="text" name="certifications" placeholder="Certificate">
                     </label>
+                    <!-- Institute -->
                     <label for="cert-institute">
                         Institute
                         <input type="text" name="cert-institute" placeholder="Institute">
                     </label>
+                    <!-- Completion Time -->
                     <label for="cert-year">
                         Completion Time
                         <input type="number" name="cert-year" placeholder="Completion Time">
                     </label>
                 </div>
-                <button id="toggle-certifications" type="button">Toggle Certifications</button>
+                <!-- Add Certifications Button -->
                 <button id="add-certifications" type="button">Add More</button>
             </fieldset>
-            <button type="submit">Generate Resume</button>    
+            <!-- Generate Resume Button -->
+            <button id="generateBtn" type="submit">Generate Resume</button>    
         </form>
-        <section id="resume">
-            <h2 id="generated" style="text-align: center; background-color: cadetblue;">Generated Resume</h2>
-            <div id="resume-output"></div>
-        </section>
-    
+    </div>
+    <!-- Form Div Ends Here -->
+
+    <!-- Resume Output -->
+    <div id="resume" class="hidden" >
+        <div id="resume-output">
+            <img id="resumePhoto" src="" alt="Profile Photo">
+            <h1 id="resumeName"></h1>
+            <p id="resumeEmail"></p>
+            <p id="resumePhone"></p>
+
+            <div id="prof-education">
+                <h2>Education</h2>
+                <ul>
+                    <li id="resumeEducation"></li>
+                </ul>
+            </div>
+            <div id="prof-experience">
+                <h2>Professional Experience</h2>
+                <ul>
+                    <li id="resumeExperience"></li>
+                </ul>
+            </div>
+            <div id="prof-skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li id="resumeSkills"></li>
+                </ul>
+            </div>
+
+            <div id="prof-certifications">
+                <h2>Certifications</h2>
+                <ul>
+                    <li id="resumeCertifications"></li>
+                </ul>
+            </div>
+        </div>
+        <button id="editBtn">Edit</button>
+        <!-- <button id="backBtn" onclick="window.location.href='index.html'">Go Back</button> -->
+        <button id="shareLinkBtn">Share Your Resume</button>
+        <button id="downloadBtn">Download Resume</button>
+    </div>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
