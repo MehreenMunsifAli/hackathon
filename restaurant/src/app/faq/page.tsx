@@ -41,7 +41,7 @@ export default function FAQPage() {
 
     return(
         <>
-        <Banner Title="Sign In Page" Page="Sign in" />
+        <Banner Title="FAQ" Page="FAQ" />
         <div className="bg-white">
             <div className="container max-w-screen-lg mx-auto py-20">
                <div className="flex flex-col items-center justify-center px-6 text-center">

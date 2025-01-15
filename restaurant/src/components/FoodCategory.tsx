@@ -18,7 +18,7 @@ export default function FoodCategory() {
             {/* Images Content */}
             <div className="container flex flex-col lg:flex-row justify-between items-center flex-wrap lg:flex-nowrap my-16 gap-4 ">
                 {/* Single image with save 30% div */}
-                <div className="relative w-full h-[700px] md:w-[244px] md:h-[294px] ">
+                <div className="relative w-full h-[700px] md:w-[244px] md:h-[294px] hover:scale-105 transition duration-300">
                     <Image
                         className="object-cover rounded-md"
                         src={"/assets/images/food_category/unsplash_-lHZUkiWM74.svg"}
@@ -36,7 +36,7 @@ export default function FoodCategory() {
 
                 </div>
                 
-                <div className=" relative w-full h-[700px] md:w-[244px] md:h-[294px]">
+                <div className=" relative w-full h-[700px] md:w-[244px] md:h-[294px] hover:scale-105 transition duration-300">
                     <Image
                         className="object-cover rounded-md"
                         src={"/assets/images/food_category/unsplash_dphM2U1xq0U.svg"}
@@ -45,7 +45,7 @@ export default function FoodCategory() {
                     />
                 </div>
 
-                <div className=" relative w-full h-[700px] md:w-[244px] md:h-[294px]">
+                <div className=" relative w-full h-[700px] md:w-[244px] md:h-[294px] hover:scale-105 transition duration-300">
                     <Image
                         className="object-cover rounded-md"
                         src={"/assets/images/food_category/unsplash_MRHyv-hHxgk.svg"}
@@ -54,7 +54,7 @@ export default function FoodCategory() {
                     />
                 </div>
                 
-                <div className=" relative w-full h-[700px] md:w-[244px] md:h-[294px]">
+                <div className=" relative w-full h-[700px] md:w-[244px] md:h-[294px] hover:scale-105 transition duration-300">
                     <Image
                         className="object-cover rounded-md"
                         src={"/assets/images/food_category/unsplash_q54Oxq44MZs.svg"}

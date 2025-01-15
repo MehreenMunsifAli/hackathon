@@ -12,7 +12,7 @@ interface ChefCardType {
 export default function ChefCard({ ImagePath, AltText, ImageWidth = '312px', ImageHeight = '391px', ChefName, ChefTitle }: ChefCardType) {
 
     return(
-        <div style={{width: ImageWidth, height: ImageHeight}} className="relative text-[#333333]">
+        <div style={{width: ImageWidth, height: ImageHeight}} className="relative text-[#333333] hover:scale-105 transition duration-300">
             
             <Image
                 src={ImagePath}

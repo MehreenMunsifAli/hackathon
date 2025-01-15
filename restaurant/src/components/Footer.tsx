@@ -137,7 +137,8 @@ export default function Footer() {
            
         </div>
          {/* End */}
-        <footer className="container max-w-screen-lg mx-auto py-4 bg-[#FF9F0D] flex flex-col lg:flex-row lg:justify-between justify-around items-center text-white">
+         <div className="bg-[#FF9F0D]">
+        <footer className="container max-w-screen-lg mx-auto py-4  flex flex-col lg:flex-row lg:justify-between justify-around items-center text-white">
             <p className="text-[16px]">
                 Copyright &copy; 2022 by Ayeman. All Rights Reserved.  
             </p>
@@ -149,7 +150,7 @@ export default function Footer() {
                 <SocialIcon Icon={FaPinterest} Url="https://pinterest.com" />
             </div>
         </footer>
-    
+        </div>
         </>
     )
 }

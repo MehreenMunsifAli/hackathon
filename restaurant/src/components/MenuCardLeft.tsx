@@ -29,7 +29,7 @@ export default function MenuCardLeft({ImageSrc, ImageText, MealType, Dish1, Dish
         <>
             <div className="container max-w-screen-lg mx-auto grid grid-cols-5 md:grid-cols-12 grid-rows-[100px_100px_100px_100px_100px_100px_100px_100px_100px_100px] md:grid-rows-[100px_100px_100px_100px_100px] text-white ">
                 {/* Image section */}
-                <div className="col-span-5 row-start-1 md:col-span-4 row-span-5 relative">
+                <div className="col-span-5 row-start-1 md:col-span-4 row-span-5 relative  hover:scale-105 transition duration-300">
                     <Image
                     className="object-cover"
                         src={ImageSrc}

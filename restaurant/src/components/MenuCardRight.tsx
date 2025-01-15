@@ -74,7 +74,7 @@ export default function MenuCardRight({ImageSrc, ImageText, MealType, Dish1, Dis
                     <p className="text-[#FF9F0D]">{DishPrice4}$</p>
                 </div>
                 {/* Image section */}
-                <div className="col-span-5 md:col-span-4 row-span-5 md:col-start-9 relative">
+                <div className="col-span-5 md:col-span-4 row-span-5 md:col-start-9 relative  hover:scale-105 transition duration-300">
                     <Image
                     className="object-cover"
                         src={ImageSrc}

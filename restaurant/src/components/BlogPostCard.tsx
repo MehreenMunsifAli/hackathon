@@ -17,7 +17,7 @@ interface BlogPostCardType {
 export default function BlogPostCard({ComponentWidth = '423px', ImagePath, ImageHeight, ImageWidth, AltText, BlogDate, BlogTitle}: BlogPostCardType) {
     return(
         <div className=" overflow-hidden text-white bg-black border-2 border-t-0 border-white" style={{width: ComponentWidth}}>
-            <div className="relative" style={{width: ImageWidth, height: ImageHeight}}>
+            <div className="relative  hover:scale-105 transition duration-300" style={{width: ImageWidth, height: ImageHeight}}>
                 <Image
                     className="object-cover"
                     src={ImagePath}

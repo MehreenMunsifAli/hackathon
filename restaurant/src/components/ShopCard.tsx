@@ -14,7 +14,7 @@ interface ShopCardType {
 
 export default function ShopCard({ ImagePath, ImageHeight, ImageWidth, AltText, CurrentPrice, DishName, OldPrice}: ShopCardType) {
     return(
-        <div className=" overflow-hidden text-white bg-transparent " >
+        <div className=" overflow-hidden text-white bg-transparent hover:scale-105 transition duration-300" >
             {/* <div className="relative" > */}
                 <Image
                     className="object-cover"

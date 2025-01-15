@@ -23,13 +23,11 @@ export default function Header() {
                             <Link href={"/"}>Home</Link>
                         </li>
                         <li><Link href={"/menu"}>Menu</Link></li>
-                        <li><Link href={"/"}>Blog</Link></li>
-                        <li><Link href={"/signup"}>Pages</Link></li>
                         <li className="relative group">
                             <button className="bg-black text-white py-2 rounded focus:outline-none">
                                 About 
                             </button>
-                            <ul className="absolute hidden group-hover:block bg-gray-800 text-white rounded mt-1 w-40">
+                            <ul className="absolute z-10 hidden group-hover:block bg-gray-800 text-white rounded w-40">
                                 <li>
                                     <Link
                                         href="/#aboutus"
@@ -49,7 +47,9 @@ export default function Header() {
                             </ul>
                         </li>
                         <li><Link href={"/shop"}>Shop</Link></li>
-                        <li><Link href={"/faq"}>Contact</Link></li>
+                        <li><Link href={"/faq"}>FAQ</Link></li>
+                        <li><Link href={"/signin"}>Sign In</Link></li>
+                        <li><Link href={"/signup"}>Sign Up</Link></li>
                     </ul>
                     {/* Small Screen nav */}
                     <Sheet>
@@ -62,8 +62,6 @@ export default function Header() {
                                 <Link href={"/"}>Home</Link>
                             </li>
                             <li><Link href={"/"}>Menu</Link></li>
-                            <li><Link href={"/"}>Blog</Link></li>
-                            <li><Link href={"/"}>Pages</Link></li>
                             <li className="relative group">
                                 <button className=" rounded focus:outline-none">
                                     About
@@ -88,15 +86,17 @@ export default function Header() {
                                 </ul>
                             </li>
                             <li><Link href={"/"}>Shop</Link></li>
-                            <li><Link href={"/"}>Contact</Link></li>
+                            <li><Link href={"/faq"}>FAQ</Link></li>
+                            <li><Link href={"/signin"}>Sign In</Link></li>
+                            <li><Link href={"/signup"}>Sign Up</Link></li>
                         </ul>
                         </SheetContent>
                     </Sheet>
                 </nav>
                 <div className=" flex items-center sm:justify-end mt-4 lg:mt-0">
                     <div className="relative">
-                        <Input placeholder="Search..." className="bg-black text-white text-[16px] w-[310px] h-[54px] pl-[20px] pr-[12px] rounded-[27px] border-2 border-[#FF9F0D]  " />
-                        <FiSearch className="absolute right-5 bottom-1/2 transform translate-y-1/2 text-3xl text-white" />
+                        <Input placeholder="Search..." className="bg-black text-white text-[16px] w-[310px] h-[40px] pl-[20px] pr-[12px] rounded-[27px] border-2 border-[#FF9F0D]  " />
+                        <FiSearch className="absolute right-5 bottom-1/2 transform translate-y-1/2 text-2xl text-white" />
                     </div>
                     <Link href={"/shopping_cart"}>
                         <SlHandbag className="text-2xl ml-4" />

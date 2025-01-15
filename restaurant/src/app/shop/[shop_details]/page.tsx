@@ -23,7 +23,6 @@ import {
 } from "@/components/ui/carousel"
 
 
-
 export default function ShopDetails() {
     const [activeImage, setActiveImage] = useState<string>("/assets/images/shop/shop_detail/Food_1.svg");
     const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -240,7 +239,7 @@ export default function ShopDetails() {
                             <div
                                 key={idx}
                                 onClick={() => setActiveImage(thumb)}
-                                className={`h-16 w-16 md:h-24 md:w-24 rounded-[8px] cursor-pointer 
+                                className={`h-16 w-16 md:h-24 md:w-24 rounded-[8px] cursor-pointer  hover:scale-105 transition duration-300
                                     ${activeImage === thumb ? "border-2 border-black" : ""}`}
 
                             >

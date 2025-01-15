@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ChefCard from "./ChefCard";
 import {Great_Vibes} from "next/font/google";
 
@@ -24,11 +25,11 @@ export default function MeetOurChef() {
             </div>
 
             {/* Button  */}
-            <div className="flex justify-center">
+            <Link href={"/ourchef"} className="flex justify-center">
                 <button className="px-6 py-2 lg:px-12 lg:py-4 bg-transparent hover:bg-[#FF9F0D] border-2 border-[#FF9F0D] text-white rounded-full transition duration-300">
                     See More
                 </button>
-            </div>
+            </Link>
             
         </div>
     );
