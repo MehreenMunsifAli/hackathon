@@ -23,6 +23,7 @@ export default function OurChefPage() {
                 setChefData(data);
             } catch (err) {
                 setError("Failed to load data");
+                throw err;
             } finally {
                 setLoading(false);
             }

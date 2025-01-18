@@ -50,18 +50,17 @@ export default function ShopDetails() {
 
     console.log("Food ID: ", food_name);
 
-    const query = `*[_type == "food" && name == $food_name][0] {
-                        name,
-                        "imageUrl": image.asset->url,
-                        description,
-                        price,
-                        originalPrice,
-                        available,
-                    }`
-
     useEffect(() => {
         const fetchData = async () => {
             try {
+                const query = `*[_type == "food" && name == $food_name][0] {
+                                    name,
+                                    "imageUrl": image.asset->url,
+                                    description,
+                                    price,
+                                    originalPrice,
+                                    available,
+                                }`;
                 console.log("Fetching data for ", food_name);
                 const food: Food | null = await client.fetch(query, { food_name });
                 console.log("Fetched Food Data:", food);
@@ -76,7 +75,6 @@ export default function ShopDetails() {
 
     if (!food_name) {
         throw new Error('shop details are missing');
-        return <div>Loading or no data found...</div>
     }
     
     const socialIcons = [

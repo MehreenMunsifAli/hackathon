@@ -150,6 +150,7 @@ export default function ShopPage() {
                 setMenu(data);
             } catch (err) {
                 setError("Failed to load data");
+                throw err;
             } finally {
                 setLoading(false);
             }
