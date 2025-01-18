@@ -17,7 +17,7 @@ export default function ShopCard({ ImagePath, ImageHeight, ImageWidth, AltText, 
         <div className=" overflow-hidden text-white bg-transparent hover:scale-105 transition duration-300" >
             {/* <div className="relative" > */}
                 <Image
-                    className="object-cover"
+                    className="object-cover w-auto"
                     src={ImagePath}
                     alt={AltText}
                     width={ImageWidth}

@@ -8,7 +8,7 @@ import { IoIosStar } from "react-icons/io";
 import { SlHandbag } from "react-icons/sl";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaPinterest } from "react-icons/fa";
 import { LuGitCompareArrows } from "react-icons/lu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaArrowCircleRight, FaArrowCircleLeft } from "react-icons/fa";
 import Link from "next/link";
@@ -21,9 +21,19 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { client } from "@/sanity/lib/client";
 
+interface Food {
+    name: string;
+    imageUrl: string;
+    description: string;
+    price: number;
+    originalPrice?: number;
+    available: boolean;
+  }
 
 export default function ShopDetails() {
+    const [foodData, setFoodData] = useState<Food | null>(null);
     const [activeImage, setActiveImage] = useState<string>("/assets/images/shop/shop_detail/Food_1.svg");
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const itemsPerPage: number = 4;
@@ -36,12 +46,39 @@ export default function ShopDetails() {
         "/assets/images/shop/shop_detail/Food_5.svg",
     ];
 
-    const {shop_details} = useParams();
+    const {food_name} = useParams();
 
-    if (!shop_details) {
-        throw new Error('shop details are missing')
+    console.log("Food ID: ", food_name);
+
+    const query = `*[_type == "food" && name == $food_name][0] {
+                        name,
+                        "imageUrl": image.asset->url,
+                        description,
+                        price,
+                        originalPrice,
+                        available,
+                    }`
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                console.log("Fetching data for ", food_name);
+                const food: Food | null = await client.fetch(query, { food_name });
+                console.log("Fetched Food Data:", food);
+                setFoodData(food);
+            } catch (error) {
+                console.error("Error fetching food data:", error);
+            }
+        }
+
+        fetchData();
+    }, [food_name]);
+
+    if (!food_name) {
+        throw new Error('shop details are missing');
+        return <div>Loading or no data found...</div>
     }
-
+    
     const socialIcons = [
         {
             id: 1,
@@ -278,7 +315,7 @@ export default function ShopDetails() {
 
                     {/* Name */}
                     <div className="md:col-start-7 md:col-span-6 md:row-start-2 px-4 gap-4">
-                        <h1 className="text-3xl lg:text-h3 font-bold">Yummy Chicken Chup</h1>
+                        <h1 className="text-3xl lg:text-h3 font-bold">{foodData?.name}</h1>
                     </div>
 
                     {/* Description */}

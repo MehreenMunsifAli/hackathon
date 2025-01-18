@@ -1,3 +1,4 @@
+"use client";
 import Banner from "@/components/Banner";
 import LatestProductsCard from "@/components/LatestProductsCard";
 import SearchBar from "@/components/SearchBar";
@@ -15,120 +16,149 @@ import {
     PaginationPrevious,
   } from "@/components/ui/pagination";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { fetchShopData } from "@/lib/utils";
   
+interface MenuType {
+    id: string;
+    name: string;
+    price: number;
+    originalPrice?: number;
+    imageUrl: string;
+}
 
 export default function ShopPage() {
-    const products = [
-        {
-            id: 1,
-            ImagePath: "/assets/images/shop/shop_card/unsplash_ZuIDLSz3XLg.svg",
-            AltText: "Food Plate and Fork",
-            DishName: "Fresh Lime",
-            CurrentPrice: 38.00,
-            OldPrice: 45.00,
-        },
-        {
-            id: 2,
-            ImagePath: "/assets/images/shop/shop_card/unsplash_LgTyii0GDKQ.svg",
-            AltText: "Muffin",
-            DishName: "Chocolate Muffin",
-            CurrentPrice: 38.00,
-        },
-        {
-            id: 3,
-            ImagePath: "/assets/images/shop/shop_card/Mask_Group.svg",
-            AltText: "Burger",
-            DishName: "Burger",
-            CurrentPrice: 21.00,
-            OldPrice: 45.00,
-        },
-        {
-            id: 4,
-            ImagePath: "/assets/images/shop/shop_card/unsplash_9G_oJBKwi1c.svg",
-            AltText: "Country Burger",
-            DishName: "Country Burger",
-            CurrentPrice: 45.00,
-        },
-        {
-            id: 5,
-            ImagePath: "/assets/images/shop/shop_card/unsplash_akwA-GPF710.svg",
-            AltText: "Drink",
-            DishName: "Drink",
-            CurrentPrice: 23.00,
-            OldPrice: 45.00,
-        },
-        {
-            id: 6,
-            ImagePath: "/assets/images/shop/shop_card/unsplash_Oxb84ENcFfU.svg",
-            AltText: "Pizza",
-            DishName: "Pizza",
-            CurrentPrice: 43.00,
-        },
-        {
-            id: 7,
-            ImagePath: "/assets/images/shop/shop_card/unsplash_TBFUDMkNqWg.svg",
-            AltText: "Cheese Butter",
-            DishName: "Cheese Butter",
-            CurrentPrice: 10.00,
-        },
-        {
-            id: 8,
-            ImagePath: "/assets/images/shop/shop_card/unsplash_U0BzBTt-5so.svg",
-            AltText: "Sandwiches",
-            DishName: "Sandwiches",
-            CurrentPrice: 25.00,
-        },
-        {
-            id: 9,
-            ImagePath: "/assets/images/shop/shop_card/unsplash_CwMdIMCB0LU.svg",
-            AltText: "Chicken Chup",
-            DishName: "Chicken Chup",
-            CurrentPrice: 12.00,
-        },
-        {
-            id: 10,
-            ImagePath: "/assets/images/shop/shop_card/unsplash_9G_oJBKwi1c.svg",
-            AltText: "Country Burger",
-            DishName: "Country Burger",
-            CurrentPrice: 45.00,
-        },
-        {
-            id: 11,
-            ImagePath: "/assets/images/shop/shop_card/unsplash_akwA-GPF710.svg",
-            AltText: "Drink",
-            DishName: "Drink",
-            CurrentPrice: 23.00,
-            OldPrice: 45.00,
-        },
-        {
-            id: 12,
-            ImagePath: "/assets/images/shop/shop_card/unsplash_Oxb84ENcFfU.svg",
-            AltText: "Pizza",
-            DishName: "Pizza",
-            CurrentPrice: 43.00,
-        },
-        {
-            id: 13,
-            ImagePath: "/assets/images/shop/shop_card/unsplash_TBFUDMkNqWg.svg",
-            AltText: "Cheese Butter",
-            DishName: "Cheese Butter",
-            CurrentPrice: 10.00,
-        },
-        {
-            id: 14,
-            ImagePath: "/assets/images/shop/shop_card/unsplash_U0BzBTt-5so.svg",
-            AltText: "Sandwiches",
-            DishName: "Sandwiches",
-            CurrentPrice: 25.00,
-        },
-        {
-            id: 15,
-            ImagePath: "/assets/images/shop/shop_card/unsplash_CwMdIMCB0LU.svg",
-            AltText: "Chicken Chup",
-            DishName: "Chicken Chup",
-            CurrentPrice: 12.00,
-        },  
-    ]
+    // const products = [
+    //     {
+    //         id: 1,
+    //         ImagePath: "/assets/images/shop/shop_card/unsplash_ZuIDLSz3XLg.svg",
+    //         AltText: "Food Plate and Fork",
+    //         DishName: "Fresh Lime",
+    //         CurrentPrice: 38.00,
+    //         OldPrice: 45.00,
+    //     },
+    //     {
+    //         id: 2,
+    //         ImagePath: "/assets/images/shop/shop_card/unsplash_LgTyii0GDKQ.svg",
+    //         AltText: "Muffin",
+    //         DishName: "Chocolate Muffin",
+    //         CurrentPrice: 38.00,
+    //     },
+    //     {
+    //         id: 3,
+    //         ImagePath: "/assets/images/shop/shop_card/Mask_Group.svg",
+    //         AltText: "Burger",
+    //         DishName: "Burger",
+    //         CurrentPrice: 21.00,
+    //         OldPrice: 45.00,
+    //     },
+    //     {
+    //         id: 4,
+    //         ImagePath: "/assets/images/shop/shop_card/unsplash_9G_oJBKwi1c.svg",
+    //         AltText: "Country Burger",
+    //         DishName: "Country Burger",
+    //         CurrentPrice: 45.00,
+    //     },
+    //     {
+    //         id: 5,
+    //         ImagePath: "/assets/images/shop/shop_card/unsplash_akwA-GPF710.svg",
+    //         AltText: "Drink",
+    //         DishName: "Drink",
+    //         CurrentPrice: 23.00,
+    //         OldPrice: 45.00,
+    //     },
+    //     {
+    //         id: 6,
+    //         ImagePath: "/assets/images/shop/shop_card/unsplash_Oxb84ENcFfU.svg",
+    //         AltText: "Pizza",
+    //         DishName: "Pizza",
+    //         CurrentPrice: 43.00,
+    //     },
+    //     {
+    //         id: 7,
+    //         ImagePath: "/assets/images/shop/shop_card/unsplash_TBFUDMkNqWg.svg",
+    //         AltText: "Cheese Butter",
+    //         DishName: "Cheese Butter",
+    //         CurrentPrice: 10.00,
+    //     },
+    //     {
+    //         id: 8,
+    //         ImagePath: "/assets/images/shop/shop_card/unsplash_U0BzBTt-5so.svg",
+    //         AltText: "Sandwiches",
+    //         DishName: "Sandwiches",
+    //         CurrentPrice: 25.00,
+    //     },
+    //     {
+    //         id: 9,
+    //         ImagePath: "/assets/images/shop/shop_card/unsplash_CwMdIMCB0LU.svg",
+    //         AltText: "Chicken Chup",
+    //         DishName: "Chicken Chup",
+    //         CurrentPrice: 12.00,
+    //     },
+    //     {
+    //         id: 10,
+    //         ImagePath: "/assets/images/shop/shop_card/unsplash_9G_oJBKwi1c.svg",
+    //         AltText: "Country Burger",
+    //         DishName: "Country Burger",
+    //         CurrentPrice: 45.00,
+    //     },
+    //     {
+    //         id: 11,
+    //         ImagePath: "/assets/images/shop/shop_card/unsplash_akwA-GPF710.svg",
+    //         AltText: "Drink",
+    //         DishName: "Drink",
+    //         CurrentPrice: 23.00,
+    //         OldPrice: 45.00,
+    //     },
+    //     {
+    //         id: 12,
+    //         ImagePath: "/assets/images/shop/shop_card/unsplash_Oxb84ENcFfU.svg",
+    //         AltText: "Pizza",
+    //         DishName: "Pizza",
+    //         CurrentPrice: 43.00,
+    //     },
+    //     {
+    //         id: 13,
+    //         ImagePath: "/assets/images/shop/shop_card/unsplash_TBFUDMkNqWg.svg",
+    //         AltText: "Cheese Butter",
+    //         DishName: "Cheese Butter",
+    //         CurrentPrice: 10.00,
+    //     },
+    //     {
+    //         id: 14,
+    //         ImagePath: "/assets/images/shop/shop_card/unsplash_U0BzBTt-5so.svg",
+    //         AltText: "Sandwiches",
+    //         DishName: "Sandwiches",
+    //         CurrentPrice: 25.00,
+    //     },
+    //     {
+    //         id: 15,
+    //         ImagePath: "/assets/images/shop/shop_card/unsplash_CwMdIMCB0LU.svg",
+    //         AltText: "Chicken Chup",
+    //         DishName: "Chicken Chup",
+    //         CurrentPrice: 12.00,
+    //     },  
+    // ]
+    const [menu, setMenu] = useState<MenuType[] | null>(null);
+    const [error, setError] = useState<string>('');
+    const [loading, setLoading] = useState<boolean>(true);
+
+    useEffect(() => {
+        const loadData = async () => {
+            try {
+                const data = await fetchShopData();
+                setMenu(data);
+            } catch (err) {
+                setError("Failed to load data");
+            } finally {
+                setLoading(false);
+            }
+        };
+        loadData();
+    }, []);
+
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>{error}</div>;
 
     return(
         <>
@@ -137,19 +167,22 @@ export default function ShopPage() {
             <div className="container max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-12 gap-y-4 md:gap-4 py-16">
                 {/* Food Cards */}
                 <div className="col-span-9 row-span-7 flex flex-wrap md:justify-normal justify-center mt-4 md:mt-0 gap-4">
-                    {products.map((product) => (
-                        <Link key={product.id} href={`/shop/${product.DishName}`} >
+                    {menu ? (
+                        menu.map((food, idx) => (
+                        <Link key={idx} href={`/shop/${food.name}`} >
                             <ShopCard
-                                ImagePath={product.ImagePath}
-                                AltText={product.AltText}
+                                ImagePath={food.imageUrl}
+                                AltText={food.name}
                                 ImageHeight={100}
                                 ImageWidth={244}
-                                DishName={product.DishName}
-                                CurrentPrice={product.CurrentPrice}
-                                OldPrice={product.OldPrice}
+                                DishName={food.name}
+                                CurrentPrice={food.price}
+                                OldPrice={food.originalPrice}
                                 /> 
                             </Link>  
-                    ))}
+                    ))) : (
+                        <p>Loading...</p>
+                    )}
                 </div>
 
                 {/* Pagination */}

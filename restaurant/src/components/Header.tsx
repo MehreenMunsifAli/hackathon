@@ -47,6 +47,7 @@ export default function Header() {
                             </ul>
                         </li>
                         <li><Link href={"/shop"}>Shop</Link></li>
+                        <li><Link href={"/ourchef"}>Our Chef</Link></li>
                         <li><Link href={"/faq"}>FAQ</Link></li>
                         <li><Link href={"/signin"}>Sign In</Link></li>
                         <li><Link href={"/signup"}>Sign Up</Link></li>
